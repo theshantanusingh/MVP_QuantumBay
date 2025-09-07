@@ -18,4 +18,4 @@ const config = {
     port: process.env.PORT
 };
 
-console.log(config);
+module.exports = config;
