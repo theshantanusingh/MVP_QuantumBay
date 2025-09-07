@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 const path = require('path');
-const logger = require('./logger.config');
 
-const dotenv_file_path = dotenv.config({ path: path.resolve(__dirname , ".." , ".env") });
+const options = require('./config.config');
+const {logger} = options;
 
 const required_envs = ['PORT' , 'SERVICE_NAME', 'NODE_ENV' , 'MONGOURI'];
 

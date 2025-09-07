@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-const logger = require('./logger.config');
-const config = require('./env.config');
+
+const options = require('./config.config');
+const {logger , config } = options;
 
 let is_connected = false;
 
@@ -39,5 +40,7 @@ async function connectDB() {
         process.exit(0);
     });
 }
+
+connectDB()
 
 module.exports = connectDB;
