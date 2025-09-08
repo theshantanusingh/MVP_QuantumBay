@@ -4,7 +4,7 @@ const path = require('path');
 const options = require('./config.config');
 const {logger} = options;
 
-const required_envs = ['PORT' , 'SERVICE_NAME', 'NODE_ENV' , 'MONGOURI'];
+const required_envs = ['PORT', 'SERVICE_NAME', 'NODE_ENV', 'MONGOURI'];
 
 for (const key of required_envs) {
     if(!process.env[key]) {
