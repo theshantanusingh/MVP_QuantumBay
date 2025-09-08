@@ -7,20 +7,30 @@ const transactionSchema = new mongoose.Schema(
       ref: 'Account',
       required: true
     },
+    
     type: {
       type: String,
       enum: ['deposit', 'withdrawal', 'transfer'],
       required: true
     },
+
     amount: {
       type: Number,
       required: true
     },
+
     status: {
       type: String,
       enum: ['pending', 'completed', 'failed'],
       default: 'completed'
     },
+
+    paymentMethod: {
+      type: String,
+      enum: ['card', 'paypal', 'wallet', 'bank'],
+      default: 'card'
+    },
+
     description: String,
   },
   { timestamps: true }
