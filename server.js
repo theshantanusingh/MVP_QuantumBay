@@ -8,7 +8,6 @@
  */
 
 const express = require('express');
-const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 
@@ -30,5 +29,4 @@ app.get('/', function(req , res){
 
 app.listen(config.port , () => {
     logger.info('Server is ready and is working on port ', config.port, ' and link to site is http://localhost:',config.port);
-})
-
+});
