@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
-const options = require('./config.config');
-const {logger , config } = options;
+const logger = require('./logger.config');
+const config = require('./env.config');
 
 let is_connected = false;
 
