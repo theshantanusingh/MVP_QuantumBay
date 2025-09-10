@@ -12,6 +12,7 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const User = require("../models/User.model");
 const asyncHandler = require("../utils/asyncHandler.util");
+const logger = require("../config/logger.config");
 
 const router = express.Router();
 
@@ -29,7 +30,8 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 
   if (!token) {
-    return res.status(401).json({ message: "Not authorized, no token" });
+    console.log("Authorization Header:", req.headers.authorization);
+    return res.status(401).json({ message: "Not authorized, no token" , token: " hii" + token });
   }
 
   try {
